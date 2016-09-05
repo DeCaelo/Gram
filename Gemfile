@@ -11,6 +11,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
+gem "paperclip", "~> 5.0.0"
+gem 'simple_form'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 
 group :development, :test do
