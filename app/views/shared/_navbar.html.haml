@@ -5,12 +5,17 @@
         %span.sr-only Toggle Navigation
         %span.icon-bar
         %span.icon-bar
-      .navbar-brand= link_to "Gram", root_path
+      .navbar-brand
+        = link_to "Photogram", root_path
     .collapse.navbar-collapse#bs-navbar-collapse-1
       %ul.nav.navbar-nav.navbar-right
-        %li
-          = link_to "Nouveau Post", new_post_path
-        %li
-          = link_to "Connexion", '#'
-        %li
-          = link_to "S'inscrire", '#'
+        - if user_signed_in?
+          %li
+            = link_to "Nouveau Post", new_post_path
+          %li
+            = link_to "Déconnexion", destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to "Connexion", new_user_session_path
+          %li
+            = link_to "S'inscrire", new_user_registration_path
